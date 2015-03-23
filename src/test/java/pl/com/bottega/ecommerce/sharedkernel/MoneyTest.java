@@ -39,4 +39,12 @@ public class MoneyTest {
 		m1.add(m2);
 	}
 
+	@Test
+	public void test_multiplyBy_2PLNBy5_sholudReturn10PLN() {
+		Money m1 = new Money(2.00, "PLN");
+		Money expected = new Money(10.00, "PLN");
+
+		assertThat(m1.multiplyBy(5), is(equalTo(expected)));
+	}
+
 }
