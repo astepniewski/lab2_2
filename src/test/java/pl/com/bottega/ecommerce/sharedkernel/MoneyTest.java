@@ -14,4 +14,12 @@ public class MoneyTest {
 		assertThat(m1, is(equalTo(m2)));
 	}
 
+	@Test
+	public void test_equals_notEqualsObjects_shouldBeFalse() {
+		Money m1 = new Money(10.00, "USD");
+		Money m2 = new Money(2.00, "USD");
+
+		assertThat(m1, is(not(equalTo(m2))));
+	}
+
 }
