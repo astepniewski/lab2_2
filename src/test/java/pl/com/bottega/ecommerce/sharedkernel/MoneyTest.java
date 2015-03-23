@@ -55,4 +55,12 @@ public class MoneyTest {
 
 		assertThat(m1.subtract(m2), is(equalTo(expected)));
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void test_subtract_twoDifferentCurrencies_shouldThrowException() {
+		Money m1 = new Money(100.00, "USD");
+		Money m2 = new Money(10.00, "EUR");
+
+		m1.subtract(m2);
+	}
 }
