@@ -71,4 +71,12 @@ public class MoneyTest {
 
 		assertThat(m1.lessThan(m2), is(true));
 	}
+
+	@Test
+	public void test_lessThan_50EURAnd1EUR_shouldReturnFalse() {
+		Money m1 = new Money(50.00, "EUR");
+		Money m2 = new Money(1.00, "EUR");
+
+		assertThat(m1.lessThan(m2), is(false));
+	}
 }
