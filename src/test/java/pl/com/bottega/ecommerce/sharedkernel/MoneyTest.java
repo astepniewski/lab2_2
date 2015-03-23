@@ -47,4 +47,12 @@ public class MoneyTest {
 		assertThat(m1.multiplyBy(5), is(equalTo(expected)));
 	}
 
+	@Test
+	public void test_subtract_100USDand10USD_sholudReturn90USD() {
+		Money m1 = new Money(100.00, "USD");
+		Money m2 = new Money(10.00, "USD");
+		Money expected = new Money(90, "USD");
+
+		assertThat(m1.subtract(m2), is(equalTo(expected)));
+	}
 }
